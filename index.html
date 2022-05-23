@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="popupdiv">
+        <div class="info-box">
+            <h1>Fun fact:</h1>
+            <p>Polar bears have black skin. And actually, their fur isn’t white—it’s see-through, so it appears white as it reflects light.</p>
+        </div>
+        <button id="close">Close</button>
+    </div>
+    <div id="home">
+        <button id='btn'>Open</button>
+
+    </div>
+
+<script charset="utf-8">
+    let btn = document.getElementById('btn');
+    let popupdiv = document.getElementById('popupdiv')
+    console.log(btn.innerHTML)
+    let closebtn = document.getElementById('close');
+
+let popup = () => {
+    popupdiv.style.transform = "translateX(100vw)";
+    popupdiv.style.transition = "ease-in 1.5s";
+    
+    btn.style.visibility = 'hidden';
+    btn.style.transition = "ease-out 0.5s";
+
+} 
+let close = ()=>{
+    popupdiv.style.transform = "translateX(-100vw)";
+    popupdiv.style.transition = "ease-out 1.5s";
+    
+    btn.style.visibility = 'visible';
+    // btn.style.transition = "ease-in 1s";
+
+}
+
+btn.onclick = popup;
+closebtn.onclick = close;
+
+    </script>
+</body>
+</html>
